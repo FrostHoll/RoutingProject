@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+
+<BorderPane fx:id="mainBorder" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.frostholl.routingproject.RoutingController">
+   <right>
+      <VBox minWidth="-Infinity" prefHeight="200.0" prefWidth="276.0" spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Откуда" />
+            <TextField promptText="Введите точку отправления" />
+            <Label layoutX="10.0" layoutY="10.0" text="Куда" />
+            <TextField layoutX="10.0" layoutY="27.0" promptText="Введите точку назначения" />
+            <Button mnemonicParsing="false" onAction="#drawPath" text="Save Joints" />
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="10.0" left="20.0" right="10.0" top="10.0" />
+         </BorderPane.margin>
+      </VBox>
+   </right>
+   <center>
+      <Pane fx:id="map" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1040.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="768.0" fitWidth="1080.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/Map0.png" />
+               </image>
+            </ImageView>
+            <Rectangle fx:id="n1" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="26.0" layoutX="856.0" layoutY="147.0" onMouseClicked="#onHouseClick" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="167.0" />
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </Pane>
+   </center>
+</BorderPane>

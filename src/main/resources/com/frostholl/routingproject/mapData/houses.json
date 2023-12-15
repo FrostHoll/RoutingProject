@@ -1,0 +1,416 @@
+[
+  {
+    "id": "house1",
+    "layoutX": 195,
+    "layoutY": 314,
+    "width": 173,
+    "height": 40,
+    "streetName": "Нежинская",
+    "number": "1"
+  },
+  {
+    "id": "house2",
+    "layoutX": 392,
+    "layoutY": 313,
+    "width": 30,
+    "height": 40,
+    "streetName": "Нежинская",
+    "number": "3"
+  },
+  {
+    "id": "house3",
+    "layoutX": 74,
+    "layoutY": 316,
+    "width": 92,
+    "height": 89,
+    "streetName": "Мира",
+    "number": "7"
+  },
+  {
+    "id": "house4",
+    "layoutX": 71,
+    "layoutY": 416,
+    "width": 36,
+    "height": 125,
+    "streetName": "Мира",
+    "number": "5"
+  },
+  {
+    "id": "house5",
+    "layoutX": 5,
+    "layoutY": 390,
+    "width": 31,
+    "height": 203,
+    "streetName": "Мира",
+    "number": "4"
+  },
+  {
+    "id": "house6",
+    "layoutX": 6,
+    "layoutY": 605,
+    "width": 31,
+    "height": 123,
+    "streetName": "Мира",
+    "number": "2"
+  },
+  {
+    "id": "house7",
+    "layoutX": 73,
+    "layoutY": 562,
+    "width": 36,
+    "height": 118,
+    "streetName": "Мира",
+    "number": "3"
+  },
+  {
+    "id": "house8",
+    "layoutX": 71,
+    "layoutY": 698,
+    "width": 110,
+    "height": 28,
+    "streetName": "Черниковская",
+    "number": "1"
+  },
+  {
+    "id": "house9",
+    "layoutX": 252,
+    "layoutY": 680,
+    "width": 35,
+    "height": 45,
+    "streetName": "Черниковская",
+    "number": "3"
+  },
+  {
+    "id": "house10",
+    "layoutX": 317,
+    "layoutY": 690,
+    "width": 165,
+    "height": 36,
+    "streetName": "Черниковская",
+    "number": "5"
+  },
+  {
+    "id": "house11",
+    "layoutX": 508,
+    "layoutY": 689,
+    "width": 179,
+    "height": 36,
+    "streetName": "Черниковская",
+    "number": "7"
+  },
+  {
+    "id": "house12",
+    "layoutX": 792,
+    "layoutY": 699,
+    "width": 185,
+    "height": 31,
+    "streetName": "Черниковская",
+    "number": "9"
+  },
+  {
+    "id": "house13",
+    "layoutX": 138,
+    "layoutY": 540,
+    "width": 74,
+    "height": 146,
+    "streetName": "Победы",
+    "number": "4"
+  },
+  {
+    "id": "house14",
+    "layoutX": 253,
+    "layoutY": 550,
+    "width": 33,
+    "height": 112,
+    "streetName": "Победы",
+    "number": "5"
+  },
+  {
+    "id": "house15",
+    "layoutX": 238,
+    "layoutY": 468,
+    "width": 177,
+    "height": 46,
+    "streetName": "Калинина",
+    "number": "10"
+  },
+  {
+    "id": "house16",
+    "layoutX": 305,
+    "layoutY": 550,
+    "width": 173,
+    "height": 33,
+    "streetName": "Калинина",
+    "number": "11"
+  },
+  {
+    "id": "house17",
+    "layoutX": 492,
+    "layoutY": 475,
+    "width": 202,
+    "height": 42,
+    "streetName": "Калинина",
+    "number": "12"
+  },
+  {
+    "id": "house18",
+    "layoutX": 543,
+    "layoutY": 551,
+    "width": 146,
+    "height": 117,
+    "streetName": "Калинина",
+    "number": "13"
+  },
+  {
+    "id": "house19",
+    "layoutX": 729,
+    "layoutY": 489,
+    "width": 131,
+    "height": 28,
+    "streetName": "Калинина",
+    "number": "14"
+  },
+  {
+    "id": "house20",
+    "layoutX": 727,
+    "layoutY": 549,
+    "width": 84,
+    "height": 74,
+    "streetName": "Калинина",
+    "number": "15"
+  },
+  {
+    "id": "house21",
+    "layoutX": 880,
+    "layoutY": 489,
+    "width": 115,
+    "height": 27,
+    "streetName": "Калинина",
+    "number": "16"
+  },
+  {
+    "id": "house22",
+    "layoutX": 832,
+    "layoutY": 595,
+    "width": 138,
+    "height": 27,
+    "streetName": "Ульяновых",
+    "number": "28"
+  },
+  {
+    "id": "house23",
+    "layoutX": 729,
+    "layoutY": 654,
+    "width": 235,
+    "height": 32,
+    "streetName": "Ульяновых",
+    "number": "27"
+  },
+  {
+    "id": "house24",
+    "layoutX": 969,
+    "layoutY": 396,
+    "width": 26,
+    "height": 83,
+    "streetName": "Свободы",
+    "number": "2"
+  },
+  {
+    "id": "house25",
+    "layoutX": 1030,
+    "layoutY": 325,
+    "width": 36,
+    "height": 188,
+    "streetName": "Свободы",
+    "number": "1"
+  },
+  {
+    "id": "house26",
+    "layoutX": 665,
+    "layoutY": 311,
+    "width": 28,
+    "height": 158,
+    "streetName": "Шумавцова",
+    "number": "2"
+  },
+  {
+    "id": "house27",
+    "layoutX": 728,
+    "layoutY": 305,
+    "width": 28,
+    "height": 83,
+    "streetName": "Шумавцова",
+    "number": "1"
+  },
+  {
+    "id": "house28",
+    "layoutX": 736,
+    "layoutY": 117,
+    "width": 31,
+    "height": 105,
+    "streetName": "Шумавцова",
+    "number": "3"
+  },
+  {
+    "id": "house29",
+    "layoutX": 426,
+    "layoutY": 377,
+    "width": 31,
+    "height": 137,
+    "streetName": "Комарова",
+    "number": "14"
+  },
+  {
+    "id": "house30",
+    "layoutX": 493,
+    "layoutY": 309,
+    "width": 31,
+    "height": 117,
+    "streetName": "Комарова",
+    "number": "15"
+  },
+  {
+    "id": "house31",
+    "layoutX": 425,
+    "layoutY": 130,
+    "width": 28,
+    "height": 97,
+    "streetName": "Комарова",
+    "number": "16"
+  },
+  {
+    "id": "house32",
+    "layoutX": 495,
+    "layoutY": 74,
+    "width": 28,
+    "height": 144,
+    "streetName": "Комарова",
+    "number": "17"
+  },
+  {
+    "id": "house33",
+    "layoutX": 10,
+    "layoutY": 238,
+    "width": 194,
+    "height": 36,
+    "streetName": "Нежинская",
+    "number": "2"
+  },
+  {
+    "id": "house34",
+    "layoutX": 291,
+    "layoutY": 240,
+    "width": 163,
+    "height": 28,
+    "streetName": "Нежинская",
+    "number": "4"
+  },
+  {
+    "id": "house35",
+    "layoutX": 540,
+    "layoutY": 310,
+    "width": 65,
+    "height": 28,
+    "streetName": "Нежинская",
+    "number": "5"
+  },
+  {
+    "id": "house36",
+    "layoutX": 498,
+    "layoutY": 241,
+    "width": 103,
+    "height": 26,
+    "streetName": "Нежинская",
+    "number": "6"
+  },
+  {
+    "id": "house37",
+    "layoutX": 627,
+    "layoutY": 173,
+    "width": 61,
+    "height": 93,
+    "streetName": "Нежинская",
+    "number": "8"
+  },
+  {
+    "id": "house38",
+    "layoutX": 734,
+    "layoutY": 247,
+    "width": 105,
+    "height": 24,
+    "streetName": "Нежинская",
+    "number": "10"
+  },
+  {
+    "id": "house39",
+    "layoutX": 882,
+    "layoutY": 245,
+    "width": 132,
+    "height": 30,
+    "streetName": "Нежинская",
+    "number": "12"
+  },
+  {
+    "id": "house40",
+    "layoutX": 245,
+    "layoutY": 179,
+    "width": 27,
+    "height": 92,
+    "streetName": "Гончарова",
+    "number": "1"
+  },
+  {
+    "id": "house41",
+    "layoutX": 171,
+    "layoutY": 126,
+    "width": 32,
+    "height": 96,
+    "streetName": "Гончарова",
+    "number": "2"
+  },
+  {
+    "id": "house42",
+    "layoutX": 136,
+    "layoutY": 64,
+    "width": 66,
+    "height": 31,
+    "streetName": "Первомайская",
+    "number": "1"
+  },
+  {
+    "id": "house43",
+    "layoutX": 247,
+    "layoutY": 66,
+    "width": 158,
+    "height": 26,
+    "streetName": "Первомайская",
+    "number": "3"
+  },
+  {
+    "id": "house44",
+    "layoutX": 549,
+    "layoutY": 75,
+    "width": 140,
+    "height": 26,
+    "streetName": "Первомайская",
+    "number": "5"
+  },
+  {
+    "id": "house45",
+    "layoutX": 783,
+    "layoutY": 63,
+    "width": 204,
+    "height": 26,
+    "streetName": "Первомайская",
+    "number": "7"
+  },
+  {
+    "id": "house46",
+    "layoutX": 778,
+    "layoutY": 307,
+    "width": 167,
+    "height": 26,
+    "streetName": "Нежинская",
+    "number": "7"
+  }
+]

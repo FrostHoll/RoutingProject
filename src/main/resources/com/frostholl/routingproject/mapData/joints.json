@@ -1,0 +1,440 @@
+[
+  {
+    "id": "j1",
+    "layoutX": 52.0,
+    "layoutY": 743.0,
+    "neighborsIds": ["j2", "j40"]
+  },
+  {
+    "id": "j2",
+    "layoutX": 127.0,
+    "layoutY": 743.0,
+    "neighborsIds": ["j1", "j3"]
+  },
+  {
+    "id": "j3",
+    "layoutX": 207.0,
+    "layoutY": 743.0,
+    "neighborsIds": ["j2", "j4"]
+  },
+  {
+    "id": "j4",
+    "layoutX": 234.0,
+    "layoutY": 744.0,
+    "neighborsIds": ["j3", "j5", "j6"]
+  },
+  {
+    "id": "j5",
+    "layoutX": 233.0,
+    "layoutY": 707.0,
+    "neighborsIds": ["j4", "j39"]
+  },
+  {
+    "id": "j6",
+    "layoutX": 395.0,
+    "layoutY": 743.0,
+    "neighborsIds": ["j4", "j7"]
+  },
+  {
+    "id": "j7",
+    "layoutX": 600.0,
+    "layoutY": 743.0,
+    "neighborsIds": ["j6", "j8"]
+  },
+  {
+    "id": "j8",
+    "layoutX": 708.0,
+    "layoutY": 744.0,
+    "neighborsIds": ["j7", "j9", "j11"]
+  },
+  {
+    "id": "j9",
+    "layoutX": 748.0,
+    "layoutY": 744.0,
+    "neighborsIds": ["j8", "j10"]
+  },
+  {
+    "id": "j10",
+    "layoutX": 886.0,
+    "layoutY": 744.0,
+    "neighborsIds": ["j9"]
+  },
+  {
+    "id": "j11",
+    "layoutX": 707.0,
+    "layoutY": 640.0,
+    "neighborsIds": ["j8", "j12", "j15"]
+  },
+  {
+    "id": "j12",
+    "layoutX": 810.0,
+    "layoutY": 640.0,
+    "neighborsIds": ["j11", "j13"]
+  },
+  {
+    "id": "j13",
+    "layoutX": 914.0,
+    "layoutY": 640.0,
+    "neighborsIds": ["j12", "j14"]
+  },
+  {
+    "id": "j14",
+    "layoutX": 998.0,
+    "layoutY": 641.0,
+    "neighborsIds": ["j13"]
+  },
+  {
+    "id": "j15",
+    "layoutX": 707.0,
+    "layoutY": 534.0,
+    "neighborsIds": ["j11", "j31", "j16", "j29"]
+  },
+  {
+    "id": "j16",
+    "layoutX": 758.0,
+    "layoutY": 535.0,
+    "neighborsIds": ["j15", "j17"]
+  },
+  {
+    "id": "j17",
+    "layoutX": 801.0,
+    "layoutY": 534.0,
+    "neighborsIds": ["j16", "j18"]
+  },
+  {
+    "id": "j18",
+    "layoutX": 937.0,
+    "layoutY": 535.0,
+    "neighborsIds": ["j17", "j19"]
+  },
+  {
+    "id": "j19",
+    "layoutX": 1013.0,
+    "layoutY": 534.0,
+    "neighborsIds": ["j18", "j20"]
+  },
+  {
+    "id": "j20",
+    "layoutX": 1013.0,
+    "layoutY": 452.0,
+    "neighborsIds": ["j19", "j21"]
+  },
+  {
+    "id": "j21",
+    "layoutX": 1014.0,
+    "layoutY": 415.0,
+    "neighborsIds": ["j20", "j22"]
+  },
+  {
+    "id": "j22",
+    "layoutX": 1014.0,
+    "layoutY": 360.0,
+    "neighborsIds": ["j21", "j23"]
+  },
+  {
+    "id": "j23",
+    "layoutX": 1014.0,
+    "layoutY": 291.0,
+    "neighborsIds": ["j24", "j22"]
+  },
+  {
+    "id": "j24",
+    "layoutX": 946.0,
+    "layoutY": 290.0,
+    "neighborsIds": ["j25", "j23"]
+  },
+  {
+    "id": "j25",
+    "layoutX": 861.0,
+    "layoutY": 292.0,
+    "neighborsIds": ["j26", "j24"]
+  },
+  {
+    "id": "j26",
+    "layoutX": 785.0,
+    "layoutY": 291.0,
+    "neighborsIds": ["j30", "j25"]
+  },
+  {
+    "id": "j27",
+    "layoutX": 708.0,
+    "layoutY": 333.0,
+    "neighborsIds": ["j28", "j30"]
+  },
+  {
+    "id": "j28",
+    "layoutX": 708.0,
+    "layoutY": 389.0,
+    "neighborsIds": ["j29", "j27"]
+  },
+  {
+    "id": "j29",
+    "layoutX": 707.0,
+    "layoutY": 430.0,
+    "neighborsIds": ["j15", "j28"]
+  },
+  {
+    "id": "j30",
+    "layoutX": 708.0,
+    "layoutY": 291.0,
+    "neighborsIds": ["j27", "j58", "j26", "j59"]
+  },
+  {
+    "id": "j31",
+    "layoutX": 648.0,
+    "layoutY": 534.0,
+    "neighborsIds": ["j15", "j32"]
+  },
+  {
+    "id": "j32",
+    "layoutX": 582.0,
+    "layoutY": 533.0,
+    "neighborsIds": ["j31", "j33"]
+  },
+  {
+    "id": "j33",
+    "layoutX": 511.0,
+    "layoutY": 535.0,
+    "neighborsIds": ["j32", "j34"]
+  },
+  {
+    "id": "j34",
+    "layoutX": 474.0,
+    "layoutY": 533.0,
+    "neighborsIds": ["j35", "j33", "j55"]
+  },
+  {
+    "id": "j35",
+    "layoutX": 392.0,
+    "layoutY": 535.0,
+    "neighborsIds": ["j36", "j34"]
+  },
+  {
+    "id": "j36",
+    "layoutX": 323.0,
+    "layoutY": 534.0,
+    "neighborsIds": ["j35", "j37"]
+  },
+  {
+    "id": "j37",
+    "layoutX": 232.0,
+    "layoutY": 534.0,
+    "neighborsIds": ["j36", "j38"]
+  },
+  {
+    "id": "j38",
+    "layoutX": 232.0,
+    "layoutY": 583.0,
+    "neighborsIds": ["j39", "j37"]
+  },
+  {
+    "id": "j39",
+    "layoutX": 232.0,
+    "layoutY": 646.0,
+    "neighborsIds": ["j5", "j38"]
+  },
+  {
+    "id": "j40",
+    "layoutX": 52.0,
+    "layoutY": 669.0,
+    "neighborsIds": ["j1", "j41"]
+  },
+  {
+    "id": "j41",
+    "layoutX": 52.0,
+    "layoutY": 615.0,
+    "neighborsIds": ["j42", "j40"]
+  },
+  {
+    "id": "j42",
+    "layoutX": 51.0,
+    "layoutY": 498.0,
+    "neighborsIds": ["j41", "j43"]
+  },
+  {
+    "id": "j43",
+    "layoutX": 51.0,
+    "layoutY": 458.0,
+    "neighborsIds": ["j42", "j44"]
+  },
+  {
+    "id": "j44",
+    "layoutX": 51.0,
+    "layoutY": 341.0,
+    "neighborsIds": ["j45", "j43"]
+  },
+  {
+    "id": "j45",
+    "layoutX": 51.0,
+    "layoutY": 291.0,
+    "neighborsIds": ["j44", "j46"]
+  },
+  {
+    "id": "j46",
+    "layoutX": 95.0,
+    "layoutY": 290.0,
+    "neighborsIds": ["j47", "j45"]
+  },
+  {
+    "id": "j47",
+    "layoutX": 123.0,
+    "layoutY": 290.0,
+    "neighborsIds": ["j46", "j48"]
+  },
+  {
+    "id": "j48",
+    "layoutX": 224.0,
+    "layoutY": 290.0,
+    "neighborsIds": ["j47", "j68", "j49"]
+  },
+  {
+    "id": "j49",
+    "layoutX": 277.0,
+    "layoutY": 291.0,
+    "neighborsIds": ["j48", "j50"]
+  },
+  {
+    "id": "j50",
+    "layoutX": 369.0,
+    "layoutY": 292.0,
+    "neighborsIds": ["j51", "j49"]
+  },
+  {
+    "id": "j51",
+    "layoutX": 407.0,
+    "layoutY": 291.0,
+    "neighborsIds": ["j52", "j50"]
+  },
+  {
+    "id": "j52",
+    "layoutX": 472.0,
+    "layoutY": 291.0,
+    "neighborsIds": ["j53", "j51", "j67", "j56"]
+  },
+  {
+    "id": "j53",
+    "layoutX": 474.0,
+    "layoutY": 338.0,
+    "neighborsIds": ["j52", "j54"]
+  },
+  {
+    "id": "j54",
+    "layoutX": 473.0,
+    "layoutY": 374.0,
+    "neighborsIds": ["j55", "j53"]
+  },
+  {
+    "id": "j55",
+    "layoutX": 474.0,
+    "layoutY": 444.0,
+    "neighborsIds": ["j34", "j54"]
+  },
+  {
+    "id": "j56",
+    "layoutX": 547.0,
+    "layoutY": 291.0,
+    "neighborsIds": ["j52", "j57"]
+  },
+  {
+    "id": "j57",
+    "layoutX": 576.0,
+    "layoutY": 291.0,
+    "neighborsIds": ["j56", "j58"]
+  },
+  {
+    "id": "j58",
+    "layoutX": 657.0,
+    "layoutY": 292.0,
+    "neighborsIds": ["j57", "j30"]
+  },
+  {
+    "id": "j59",
+    "layoutX": 708.0,
+    "layoutY": 172.0,
+    "neighborsIds": ["j60", "j30"]
+  },
+  {
+    "id": "j60",
+    "layoutX": 707.0,
+    "layoutY": 87.0,
+    "neighborsIds": ["j61", "j59"]
+  },
+  {
+    "id": "j61",
+    "layoutX": 708.0,
+    "layoutY": 47.0,
+    "neighborsIds": ["j60", "j63", "j62"]
+  },
+  {
+    "id": "j62",
+    "layoutX": 880.0,
+    "layoutY": 48.0,
+    "neighborsIds": ["j61"]
+  },
+  {
+    "id": "j63",
+    "layoutX": 616.0,
+    "layoutY": 47.0,
+    "neighborsIds": ["j61", "j64"]
+  },
+  {
+    "id": "j64",
+    "layoutX": 473.0,
+    "layoutY": 48.0,
+    "neighborsIds": ["j65", "j63", "j71"]
+  },
+  {
+    "id": "j65",
+    "layoutX": 474.0,
+    "layoutY": 91.0,
+    "neighborsIds": ["j64", "j66"]
+  },
+  {
+    "id": "j66",
+    "layoutX": 473.0,
+    "layoutY": 151.0,
+    "neighborsIds": ["j65", "j67"]
+  },
+  {
+    "id": "j67",
+    "layoutX": 472.0,
+    "layoutY": 195.0,
+    "neighborsIds": ["j52", "j66"]
+  },
+  {
+    "id": "j68",
+    "layoutX": 223.0,
+    "layoutY": 242.0,
+    "neighborsIds": ["j48", "j69"]
+  },
+  {
+    "id": "j69",
+    "layoutX": 223.0,
+    "layoutY": 177.0,
+    "neighborsIds": ["j70", "j68"]
+  },
+  {
+    "id": "j70",
+    "layoutX": 224.0,
+    "layoutY": 48.0,
+    "neighborsIds": ["j69", "j71", "j72"]
+  },
+  {
+    "id": "j71",
+    "layoutX": 318.0,
+    "layoutY": 48.0,
+    "neighborsIds": ["j64", "j70"]
+  },
+  {
+    "id": "j72",
+    "layoutX": 167.0,
+    "layoutY": 48.0,
+    "neighborsIds": ["j70", "j73"]
+  },
+  {
+    "id": "j73",
+    "layoutX": 92.0,
+    "layoutY": 47.0,
+    "neighborsIds": ["j72"]
+  }
+]
