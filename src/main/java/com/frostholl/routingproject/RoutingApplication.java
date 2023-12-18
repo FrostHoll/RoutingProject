@@ -1,6 +1,8 @@
 package com.frostholl.routingproject;
 
 import com.frostholl.routingproject.interfaces.InitEventListener;
+import com.frostholl.routingproject.models.BusRoute;
+import com.frostholl.routingproject.models.BusStop;
 import com.frostholl.routingproject.models.House;
 import com.frostholl.routingproject.models.Joint;
 import com.google.gson.GsonBuilder;
@@ -35,9 +37,13 @@ public class RoutingApplication extends Application {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         Type housesListToken = new TypeToken<Collection<House> >(){}.getType();
         Type jointsListToken = new TypeToken<Collection<Joint> >(){}.getType();
+        Type busStopsListToken = new TypeToken<Collection<BusStop> >(){}.getType();
+        Type busRoutesListToken = new TypeToken<Collection<BusRoute> >(){}.getType();
         List<House> deserializedHouses = gson.fromJson(new FileReader(mapDataPath + "houses.json"), housesListToken);
         List<Joint> deserializedJoints = gson.fromJson(new FileReader(mapDataPath + "joints.json"), jointsListToken);
-        invokeInit(deserializedHouses, deserializedJoints);
+        List<BusStop> deserializedBusStops = gson.fromJson(new FileReader(mapDataPath + "busStops.json"), busStopsListToken);
+        List<BusRoute> deserializedBusRoutes = gson.fromJson(new FileReader(mapDataPath + "busRoutes.json"), busRoutesListToken);
+        invokeInit(deserializedHouses, deserializedJoints, deserializedBusStops, deserializedBusRoutes);
     }
 
     public static void main(String[] args) {
@@ -48,9 +54,9 @@ public class RoutingApplication extends Application {
         initEventListeners.add(listener);
     }
 
-    public static void invokeInit(List<House> houses, List<Joint> joints) {
+    public static void invokeInit(List<House> houses, List<Joint> joints, List<BusStop> busStops, List<BusRoute> busRoutes) {
         for (var l: initEventListeners) {
-            l.onInit(houses, joints);
+            l.onInit(houses, joints, busStops, busRoutes);
         }
     }
 }

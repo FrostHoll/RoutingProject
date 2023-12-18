@@ -1,6 +1,8 @@
 package com.frostholl.routingproject;
 
 import com.frostholl.routingproject.interfaces.InitEventListener;
+import com.frostholl.routingproject.models.BusRoute;
+import com.frostholl.routingproject.models.BusStop;
 import com.frostholl.routingproject.models.House;
 import com.frostholl.routingproject.models.Joint;
 import com.google.gson.Gson;
@@ -16,7 +18,6 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
-import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
 
 import java.io.FileWriter;
@@ -30,6 +31,10 @@ public class RoutingController implements Initializable, InitEventListener {
     private HashMap<String, House> houses = new HashMap<>();
 
     private HashMap<String, Joint> joints = new HashMap<>();
+
+    private HashMap<String, BusStop> busStops = new HashMap<>();
+
+    private List<BusRoute> busRoutes = new ArrayList<>();
 
     private List<House> housesList;
 
@@ -58,7 +63,13 @@ public class RoutingController implements Initializable, InitEventListener {
     private Label errorMessage;
 
     @FXML
-    protected void onHouseClick(MouseEvent mouseEvent) {
+    private Label autoPathInfo;
+
+    @FXML
+    private Label busPathInfo;
+
+    @FXML
+    protected void onHouseClicked(MouseEvent mouseEvent) {
         var h = houses.getOrDefault(((Rectangle)mouseEvent.getSource()).getId(), null);
         if (h != null) {
             switch (chooseState) {
@@ -86,6 +97,18 @@ public class RoutingController implements Initializable, InitEventListener {
         else {
             System.out.println(mouseEvent.getSource());
         }
+    }
+
+    @FXML
+    protected void onBusStopClicked(MouseEvent mouseEvent) {
+        var b = busStops.getOrDefault(((Rectangle)mouseEvent.getSource()).getId(), null);
+        if (b != null) {
+            String sb = "Информация о остановке:\n" +
+                    b.getName();
+            InfoBoxController.display(sb);
+        }
+        else
+            System.out.println(mouseEvent.getSource());
     }
 
     @FXML
@@ -165,9 +188,92 @@ public class RoutingController implements Initializable, InitEventListener {
             errorMessage.setText("Точки отправления и прибытия совпадают!");
             return;
         }
-        PathFinder.drawPath(map, currentStart, currentEnd);
-
+        var path = PathController.findShortestPath(currentStart, currentEnd);
+        PathController.drawPath(map, path);
+        autoPathInfo.setText(String.format("Длина пути: %.0fм", PathController.getDistance(path)));
         errorMessage.setText("");
+    }
+
+    @FXML
+    protected void drawPathBus() {
+        validateStartPoint();
+        validateEndPoint();
+        if (currentStart == null || currentEnd == null) {
+            return;
+        }
+        if (currentStart == currentEnd) {
+            errorMessage.setText("Точки отправления и прибытия совпадают!");
+            return;
+        }
+        var pathNodesA = PathController.findShortestPaths(currentStart);
+        var pathNodesB = PathController.findShortestPaths(currentEnd);
+        BusRoute optimalRoute = null;
+        Joint optimalBusStopA = null;
+        Joint optimalBusStopB = null;
+        double minimalDistA = 0d;
+        double minimalDistB = 0d;
+        while (optimalRoute == null) {
+            PathNode nearestBusStopA = null;
+            PathNode nearestBusStopB = null;
+            for (var bs: busStops.values()) {
+                Joint j = joints.get(bs.getNearestJointId());
+                if (pathNodesA.get(j.getId()).getDistance() > minimalDistA) {
+                    if (nearestBusStopA == null) nearestBusStopA = pathNodesA.get(j.getId());
+                    else if (pathNodesA.get(j.getId()).getDistance() < nearestBusStopA.getDistance()) {
+                        nearestBusStopA = pathNodesA.get(j.getId());
+                    }
+                }
+                if (pathNodesB.get(j.getId()).getDistance() > minimalDistB) {
+                    if (nearestBusStopB == null) nearestBusStopB = pathNodesB.get(j.getId());
+                    else if (pathNodesB.get(j.getId()).getDistance() < nearestBusStopB.getDistance()) {
+                        nearestBusStopB = pathNodesB.get(j.getId());
+                    }
+                }
+            }
+            if (nearestBusStopA == null || nearestBusStopB == null) break;
+            for (var br: busRoutes) {
+                if (br.containsInRoute(nearestBusStopA.getJoint(), nearestBusStopB.getJoint())) {
+                    optimalRoute = br;
+                }
+            }
+            if (optimalRoute == null) {
+                if (nearestBusStopA.getDistance() > nearestBusStopB.getDistance())
+                    minimalDistB = nearestBusStopB.getDistance();
+                else
+                    minimalDistA = nearestBusStopA.getDistance();
+            }
+            else {
+                optimalBusStopA = nearestBusStopA.getJoint();
+                optimalBusStopB = nearestBusStopB.getJoint();
+            }
+        }
+        if (optimalRoute == null) {
+            errorMessage.setText("Маршрут не найден!");
+            return;
+        }
+        List<Joint> fullRoute = optimalRoute.getFullRoute();
+        var pathA = PathController.getShortestPath(pathNodesA, optimalBusStopA);
+        var pathB = PathController.getShortestPath(pathNodesB, optimalBusStopB);
+        int BusStopIndexA = fullRoute.indexOf(optimalBusStopA);
+        int BusStopIndexB = fullRoute.indexOf(optimalBusStopB);
+        if (BusStopIndexA < BusStopIndexB)
+            fullRoute = fullRoute.subList(BusStopIndexA, BusStopIndexB + 1);
+        else
+            fullRoute = fullRoute.subList(BusStopIndexB, BusStopIndexA + 1);
+        PathController.setCurrentPathColor(new Color(0, 0, 1, 1));
+        PathController.drawPath(map, fullRoute);
+        PathController.allowOverride = true;
+        PathController.setCurrentPathColor(new Color(1, 0, 0, 1));
+        PathController.drawPath(map, pathA);
+        PathController.setCurrentPathColor(new Color(1, 0, 0, 1));
+        PathController.drawPath(map, pathB);
+        PathController.setCurrentPathColor(new Color(0, 0, 1, 1));
+        PathController.allowOverride = false;
+        StringBuilder sb = new StringBuilder();
+        sb.append(String.format("Расстояние до остановки: %.0fм\n", PathController.getDistance(pathA)));
+        sb.append(String.format("В пути на маршруте \"%s\": %.0fм\n", optimalRoute.getId(), PathController.getDistance(fullRoute)));
+        sb.append(String.format("Расстояние от остановки: %.0fм\n", PathController.getDistance(pathB)));
+        busPathInfo.setText(sb.toString());
     }
 
     @FXML
@@ -186,10 +292,12 @@ public class RoutingController implements Initializable, InitEventListener {
         }
     }
 
-    public void onInit(List<House> houses, List<Joint> joints) {
+    public void onInit(List<House> houses, List<Joint> joints, List<BusStop> busStops, List<BusRoute> busRoutes) {
         initHouses(houses);
         initJoints(joints);
-        PathFinder.init(this.joints);
+        initBusStops(busStops);
+        PathController.init(this.joints);
+        initBusRoutes(busRoutes);
     }
 
     private void initHouses(List<House> houses) {
@@ -203,7 +311,7 @@ public class RoutingController implements Initializable, InitEventListener {
             rect.setHeight(h.getHeight());
             rect.setId(h.getId());
             rect.setOpacity(0d);
-            rect.setOnMouseClicked(this::onHouseClick);
+            rect.setOnMouseClicked(this::onHouseClicked);
             map.getChildren().add(rect);
         }
     }
@@ -225,6 +333,38 @@ public class RoutingController implements Initializable, InitEventListener {
             {
                 j.addNeighbor(this.joints.get(n));
             }
+        }
+    }
+
+    private void initBusStops(List<BusStop> busStops) {
+        for (var b: busStops) {
+            this.busStops.put(b.getId(), b);
+            Rectangle rect = new Rectangle();
+            rect.setLayoutX(b.getLayoutX());
+            rect.setLayoutY(b.getLayoutY());
+            rect.setWidth(b.getWidth());
+            rect.setHeight(b.getHeight());
+            rect.setId(b.getId());
+            rect.setOpacity(0d);
+            rect.setOnMouseClicked(this::onBusStopClicked);
+            map.getChildren().add(rect);
+        }
+    }
+
+    private void initBusRoutes(List<BusRoute> busRoutes) {
+        this.busRoutes = busRoutes;
+        for (var br: busRoutes) {
+            LinkedList<Joint> fullPath = new LinkedList<>();
+            ArrayList<Joint> routeJoints = new ArrayList<>();
+            for (var bs: br.getRoute()) {
+                routeJoints.add(joints.get(busStops.get(bs).getNearestJointId()));
+            }
+            fullPath.add(routeJoints.get(0));
+            for (int i = 0; i < routeJoints.size() - 1; i++) {
+                var currentPath = PathController.findShortestPath(routeJoints.get(i), routeJoints.get(i + 1));
+                fullPath.addAll(currentPath.subList(1, currentPath.size()));
+            }
+            br.setFullRoute(fullPath);
         }
     }
 

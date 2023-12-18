@@ -13,7 +13,6 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.shape.Rectangle?>
 
 <BorderPane fx:id="mainBorder" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.frostholl.routingproject.RoutingController">
    <right>
@@ -44,14 +43,19 @@
                   <content>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
-                              <Button mnemonicParsing="false" onAction="#drawPath" text="Просчитать маршрут" AnchorPane.bottomAnchor="55.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="55.0" />
+                              <Button mnemonicParsing="false" onAction="#drawPath" text="Просчитать маршрут" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="50.0" />
+                              <Label fx:id="autoPathInfo" alignment="CENTER" prefWidth="280.0" AnchorPane.topAnchor="120.0" />
                            </children>
                         </AnchorPane>
                   </content>
                 </Tab>
                 <Tab text="На автобусе">
                   <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#drawPathBus" text="Просчитать маршрут" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="50.0" />
+                              <Label fx:id="busPathInfo" alignment="CENTER" prefWidth="280.0" AnchorPane.topAnchor="120.0" />
+                           </children></AnchorPane>
                   </content>
                 </Tab>
               </tabs>
@@ -70,7 +74,6 @@
                   <Image url="@images/Map0.png" />
                </image>
             </ImageView>
-            <Rectangle fx:id="n1" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="26.0" layoutX="856.0" layoutY="147.0" onMouseClicked="#onHouseClick" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="167.0" />
          </children>
          <BorderPane.margin>
             <Insets />

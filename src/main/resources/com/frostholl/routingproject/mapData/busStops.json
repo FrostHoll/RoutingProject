@@ -1,0 +1,101 @@
+[
+  {
+    "id": "b1",
+    "layoutX": 723,
+    "layoutY": 74,
+    "width": 25,
+    "height": 25,
+    "name": "Дом Коммунаров",
+    "nearestJointId": "j60"
+  },
+  {
+    "id": "b2",
+    "layoutX": 434,
+    "layoutY": 77,
+    "width": 25,
+    "height": 25,
+    "name": "Юношеский парк",
+    "nearestJointId": "j65"
+  },
+  {
+    "id": "b3",
+    "layoutX": 79,
+    "layoutY": 65,
+    "width": 25,
+    "height": 25,
+    "name": "Площадь Ленина",
+    "nearestJointId": "j73"
+  },
+  {
+    "id": "b4",
+    "layoutX": 434,
+    "layoutY": 324,
+    "width": 25,
+    "height": 25,
+    "name": "Дом печати",
+    "nearestJointId": "j53"
+  },
+  {
+    "id": "b5",
+    "layoutX": 12,
+    "layoutY": 330,
+    "width": 25,
+    "height": 25,
+    "name": "Банк ДомКредит",
+    "nearestJointId": "j44"
+  },
+  {
+    "id": "b6",
+    "layoutX": 193,
+    "layoutY": 706,
+    "width": 25,
+    "height": 25,
+    "name": "Школа №44",
+    "nearestJointId": "j3"
+  },
+  {
+    "id": "b7",
+    "layoutX": 498,
+    "layoutY": 549,
+    "width": 25,
+    "height": 25,
+    "name": "Центральный рынок",
+    "nearestJointId": "j33"
+  },
+  {
+    "id": "b8",
+    "layoutX": 728,
+    "layoutY": 415,
+    "width": 25,
+    "height": 25,
+    "name": "Шумавцова",
+    "nearestJointId": "j29"
+  },
+  {
+    "id": "b9",
+    "layoutX": 976,
+    "layoutY": 346,
+    "width": 25,
+    "height": 25,
+    "name": "Свободы",
+    "nearestJointId": "j22"
+  },
+  {
+    "id": "b10",
+    "layoutX": 735,
+    "layoutY": 703,
+    "width": 25,
+    "height": 25,
+    "name": "Стоматология №4",
+    "nearestJointId": "j9"
+  },
+  {
+    "id": "b11",
+    "layoutX": 984,
+    "layoutY": 597,
+    "width": 25,
+    "height": 25,
+    "name": "Ульяновых",
+    "nearestJointId": "j14"
+  }
+]
