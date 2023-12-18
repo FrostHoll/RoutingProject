@@ -6,10 +6,12 @@ import com.frostholl.routingproject.models.Joint;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Cursor;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
@@ -29,26 +31,57 @@ public class RoutingController implements Initializable, InitEventListener {
 
     private HashMap<String, Joint> joints = new HashMap<>();
 
+    private List<House> housesList;
+
+    private Joint currentStart = null;
+
+    private Joint currentEnd = null;
+
+    private ChooseState chooseState = ChooseState.NONE;
+
     @FXML
     private Pane map;
 
     @FXML
-    private Label welcomeText;
+    private Button chooseStartHouseButton;
 
     @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
-    }
+    private Button chooseEndHouseButton;
+
+    @FXML
+    private TextField startPointText;
+
+    @FXML
+    private TextField endPointText;
+
+    @FXML
+    private Label errorMessage;
 
     @FXML
     protected void onHouseClick(MouseEvent mouseEvent) {
         var h = houses.getOrDefault(((Rectangle)mouseEvent.getSource()).getId(), null);
         if (h != null) {
-            String sb = "Информация о доме:\n" +
-                    h.getStreetName() +
-                    ", " +
-                    h.getNumber();
-            InfoBoxController.display(sb);
+            switch (chooseState) {
+                case START -> {
+                    startPointText.setText(h.getStreetName() + ", " + h.getNumber());
+                    chooseStartHouseButton.setText("Выбрать");
+                    chooseState = ChooseState.NONE;
+                    map.setCursor(Cursor.DEFAULT);
+                }
+                case END -> {
+                    endPointText.setText(h.getStreetName() + ", " + h.getNumber());
+                    chooseEndHouseButton.setText("Выбрать");
+                    chooseState = ChooseState.NONE;
+                    map.setCursor(Cursor.DEFAULT);
+                }
+                case NONE -> {
+                    String sb = "Информация о доме:\n" +
+                            h.getStreetName() +
+                            ", " +
+                            h.getNumber();
+                    InfoBoxController.display(sb);
+                }
+            }
         }
         else {
             System.out.println(mouseEvent.getSource());
@@ -56,20 +89,85 @@ public class RoutingController implements Initializable, InitEventListener {
     }
 
     @FXML
-    protected void createJoint(MouseEvent mouseEvent) {
+    protected void onChooseStartHouseClicked() {
+        if (chooseState == ChooseState.START) {
+            chooseStartHouseButton.setText("Выбрать");
+            chooseState = ChooseState.NONE;
+            map.setCursor(Cursor.DEFAULT);
+            return;
+        }
+        if (chooseState == ChooseState.END) {
+            chooseEndHouseButton.setText("Выбрать");
+        }
+        chooseState = ChooseState.START;
+        chooseStartHouseButton.setText("Отмена");
+        map.setCursor(Cursor.CROSSHAIR);
+    }
 
+    @FXML
+    protected void onChooseEndHouseClicked() {
+        if (chooseState == ChooseState.END) {
+            chooseEndHouseButton.setText("Выбрать");
+            chooseState = ChooseState.NONE;
+            map.setCursor(Cursor.DEFAULT);
+            return;
+        }
+        if (chooseState == ChooseState.START) {
+            chooseStartHouseButton.setText("Выбрать");
+        }
+        chooseState = ChooseState.END;
+        chooseEndHouseButton.setText("Отмена");
+        map.setCursor(Cursor.CROSSHAIR);
+    }
+
+    @FXML
+    protected void validateStartPoint() {
+        var house = getHouseFromText(startPointText.getText());
+        if (house == null) {
+            currentStart = null;
+            errorMessage.setText("Неправильно указана точка отправления!");
+            return;
+        }
+        currentStart = joints.get(house.getNearestJointId());
+        errorMessage.setText("");
+    }
+
+    @FXML
+    protected void validateEndPoint() {
+        var house = getHouseFromText(endPointText.getText());
+        if (house == null) {
+            currentEnd = null;
+            errorMessage.setText("Неправильно указана точка прибытия!");
+            return;
+        }
+        currentEnd = joints.get(house.getNearestJointId());
+        errorMessage.setText("");
+    }
+
+    private House getHouseFromText(String text) {
+        if (!text.contains(",")) return null;
+        var arr = text.split(",");
+        if (arr.length != 2) return null;
+        String street = arr[0].trim();
+        String number = arr[1].trim();
+        var house = housesList.stream().filter(h -> Objects.equals(h.getStreetName(), street) && Objects.equals(h.getNumber(), number)).findFirst();
+        return house.orElse(null);
     }
 
     @FXML
     protected void drawPath() {
-        String startJointId = "j67";
-        Joint startJoint = joints.get(startJointId);
-        String endJointId = "j52";
-        Joint endJoint = joints.get(endJointId);
-        Line path = new Line(startJoint.getLayoutX(), startJoint.getLayoutY(), endJoint.getLayoutX(), endJoint.getLayoutY());
-        path.setStroke(new Color(0, 0, 1, 1));
-        path.setStrokeWidth(5);
-        map.getChildren().add(path);
+        validateStartPoint();
+        validateEndPoint();
+        if (currentStart == null || currentEnd == null) {
+            return;
+        }
+        if (currentStart == currentEnd) {
+            errorMessage.setText("Точки отправления и прибытия совпадают!");
+            return;
+        }
+        PathFinder.drawPath(map, currentStart, currentEnd);
+
+        errorMessage.setText("");
     }
 
     @FXML
@@ -95,6 +193,7 @@ public class RoutingController implements Initializable, InitEventListener {
     }
 
     private void initHouses(List<House> houses) {
+        housesList = houses;
         for (var h: houses) {
             this.houses.put(h.getId(), h);
             Rectangle rect = new Rectangle();
@@ -113,10 +212,12 @@ public class RoutingController implements Initializable, InitEventListener {
         for (var j: joints) {
             this.joints.put(j.getId(), j);
             Circle circle = new Circle(j.getLayoutX(), j.getLayoutY(), 8);
+            circle.setOpacity(0d);
             Label label = new Label(j.getId());
             label.setLayoutX(j.getLayoutX() - 3);
             label.setLayoutY(j.getLayoutY() + 8);
             label.setTextFill(new Color(1, 0, 0, 1));
+            label.setOpacity(0d);
             map.getChildren().addAll(circle, label);
         }
         for (var j: joints) {

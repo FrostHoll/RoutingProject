@@ -13,6 +13,10 @@ public class Joint {
 
     private ArrayList<Joint> neighbors;
 
+    public static Double getDistance(Joint a, Joint b) {
+        return Math.sqrt(Math.pow(a.layoutX - b.layoutX, 2) + Math.pow(a.layoutY - b.layoutY, 2));
+    }
+
     public Joint(String id, double layoutX, double layoutY, ArrayList<String> neighborsIds) {
         this.id = id;
         this.layoutX = layoutX;

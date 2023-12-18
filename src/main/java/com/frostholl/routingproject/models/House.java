@@ -18,7 +18,9 @@ public class House {
 
     private String number;
 
-    public House(String id, double layoutX, double layoutY, double width, double height, String streetName, String number) {
+    private String nearestJointId;
+
+    public House(String id, double layoutX, double layoutY, double width, double height, String streetName, String number, String nearestJointId) {
         this.id = id;
         this.layoutX = layoutX;
         this.layoutY = layoutY;
@@ -26,6 +28,7 @@ public class House {
         this.height = height;
         this.streetName = streetName;
         this.number = number;
+        this.nearestJointId = nearestJointId;
     }
 
     public String getId() {
@@ -56,6 +59,10 @@ public class House {
         return number;
     }
 
+    public String getNearestJointId() {
+        return nearestJointId;
+    }
+
     @Override
     public String toString() {
         return "House{" +
@@ -66,6 +73,7 @@ public class House {
                 ", height=" + height +
                 ", streetName='" + streetName + '\'' +
                 ", number='" + number + '\'' +
+                ", nearestJointId='" + nearestJointId + '\'' +
                 '}';
     }
 }

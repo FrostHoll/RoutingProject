@@ -3,10 +3,14 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Rectangle?>
@@ -16,10 +20,42 @@
       <VBox minWidth="-Infinity" prefHeight="200.0" prefWidth="276.0" spacing="10.0" BorderPane.alignment="CENTER">
          <children>
             <Label text="Откуда" />
-            <TextField promptText="Введите точку отправления" />
+            <HBox prefHeight="30.0" prefWidth="200.0" spacing="5.0">
+               <children>
+                  <TextField fx:id="startPointText" onAction="#validateStartPoint" prefWidth="200.0" promptText="Введите точку отправления" />
+                  <Button fx:id="chooseStartHouseButton" mnemonicParsing="false" onAction="#onChooseStartHouseClicked" prefWidth="70.0" text="Выбрать" />
+               </children>
+            </HBox>
             <Label layoutX="10.0" layoutY="10.0" text="Куда" />
-            <TextField layoutX="10.0" layoutY="27.0" promptText="Введите точку назначения" />
-            <Button mnemonicParsing="false" onAction="#drawPath" text="Save Joints" />
+            <HBox layoutX="10.0" layoutY="38.0" prefHeight="30.0" prefWidth="200.0" spacing="5.0">
+               <children>
+                  <TextField fx:id="endPointText" onAction="#validateEndPoint" prefWidth="200.0" promptText="Введите точку назначения" />
+                  <Button fx:id="chooseEndHouseButton" mnemonicParsing="false" onAction="#onChooseEndHouseClicked" prefWidth="70.0" text="Выбрать" />
+               </children>
+            </HBox>
+            <Label fx:id="errorMessage" alignment="CENTER" contentDisplay="CENTER" prefHeight="18.0" prefWidth="280.0" styleClass="errorMessage" textFill="RED">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </Label>
+            <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" tabMaxHeight="40.0">
+              <tabs>
+                <Tab text="На автомобиле">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#drawPath" text="Просчитать маршрут" AnchorPane.bottomAnchor="55.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="55.0" />
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="На автобусе">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                  </content>
+                </Tab>
+              </tabs>
+            </TabPane>
          </children>
          <BorderPane.margin>
             <Insets bottom="10.0" left="20.0" right="10.0" top="10.0" />

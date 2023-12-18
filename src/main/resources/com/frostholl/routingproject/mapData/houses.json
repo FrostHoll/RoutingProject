@@ -6,7 +6,8 @@
     "width": 173,
     "height": 40,
     "streetName": "Нежинская",
-    "number": "1"
+    "number": "1",
+    "nearestJointId": "j49"
   },
   {
     "id": "house2",
@@ -15,7 +16,8 @@
     "width": 30,
     "height": 40,
     "streetName": "Нежинская",
-    "number": "3"
+    "number": "3",
+    "nearestJointId": "j51"
   },
   {
     "id": "house3",
@@ -24,7 +26,8 @@
     "width": 92,
     "height": 89,
     "streetName": "Мира",
-    "number": "7"
+    "number": "7",
+    "nearestJointId": "j47"
   },
   {
     "id": "house4",
@@ -33,7 +36,8 @@
     "width": 36,
     "height": 125,
     "streetName": "Мира",
-    "number": "5"
+    "number": "5",
+    "nearestJointId": "j43"
   },
   {
     "id": "house5",
@@ -42,7 +46,8 @@
     "width": 31,
     "height": 203,
     "streetName": "Мира",
-    "number": "4"
+    "number": "4",
+    "nearestJointId": "j42"
   },
   {
     "id": "house6",
@@ -51,7 +56,8 @@
     "width": 31,
     "height": 123,
     "streetName": "Мира",
-    "number": "2"
+    "number": "2",
+    "nearestJointId": "j40"
   },
   {
     "id": "house7",
@@ -60,7 +66,8 @@
     "width": 36,
     "height": 118,
     "streetName": "Мира",
-    "number": "3"
+    "number": "3",
+    "nearestJointId": "j41"
   },
   {
     "id": "house8",
@@ -69,7 +76,8 @@
     "width": 110,
     "height": 28,
     "streetName": "Черниковская",
-    "number": "1"
+    "number": "1",
+    "nearestJointId": "j2"
   },
   {
     "id": "house9",
@@ -78,7 +86,8 @@
     "width": 35,
     "height": 45,
     "streetName": "Черниковская",
-    "number": "3"
+    "number": "3",
+    "nearestJointId": "j5"
   },
   {
     "id": "house10",
@@ -87,7 +96,8 @@
     "width": 165,
     "height": 36,
     "streetName": "Черниковская",
-    "number": "5"
+    "number": "5",
+    "nearestJointId": "j6"
   },
   {
     "id": "house11",
@@ -96,7 +106,8 @@
     "width": 179,
     "height": 36,
     "streetName": "Черниковская",
-    "number": "7"
+    "number": "7",
+    "nearestJointId": "j7"
   },
   {
     "id": "house12",
@@ -105,7 +116,8 @@
     "width": 185,
     "height": 31,
     "streetName": "Черниковская",
-    "number": "9"
+    "number": "9",
+    "nearestJointId": "j10"
   },
   {
     "id": "house13",
@@ -114,7 +126,8 @@
     "width": 74,
     "height": 146,
     "streetName": "Победы",
-    "number": "4"
+    "number": "4",
+    "nearestJointId": "j39"
   },
   {
     "id": "house14",
@@ -123,7 +136,8 @@
     "width": 33,
     "height": 112,
     "streetName": "Победы",
-    "number": "5"
+    "number": "5",
+    "nearestJointId": "j38"
   },
   {
     "id": "house15",
@@ -132,7 +146,8 @@
     "width": 177,
     "height": 46,
     "streetName": "Калинина",
-    "number": "10"
+    "number": "10",
+    "nearestJointId": "j36"
   },
   {
     "id": "house16",
@@ -141,7 +156,8 @@
     "width": 173,
     "height": 33,
     "streetName": "Калинина",
-    "number": "11"
+    "number": "11",
+    "nearestJointId": "j35"
   },
   {
     "id": "house17",
@@ -150,7 +166,8 @@
     "width": 202,
     "height": 42,
     "streetName": "Калинина",
-    "number": "12"
+    "number": "12",
+    "nearestJointId": "j32"
   },
   {
     "id": "house18",
@@ -159,7 +176,8 @@
     "width": 146,
     "height": 117,
     "streetName": "Калинина",
-    "number": "13"
+    "number": "13",
+    "nearestJointId": "j31"
   },
   {
     "id": "house19",
@@ -168,7 +186,8 @@
     "width": 131,
     "height": 28,
     "streetName": "Калинина",
-    "number": "14"
+    "number": "14",
+    "nearestJointId": "j17"
   },
   {
     "id": "house20",
@@ -177,7 +196,8 @@
     "width": 84,
     "height": 74,
     "streetName": "Калинина",
-    "number": "15"
+    "number": "15",
+    "nearestJointId": "j16"
   },
   {
     "id": "house21",
@@ -186,7 +206,8 @@
     "width": 115,
     "height": 27,
     "streetName": "Калинина",
-    "number": "16"
+    "number": "16",
+    "nearestJointId": "j18"
   },
   {
     "id": "house22",
@@ -195,7 +216,8 @@
     "width": 138,
     "height": 27,
     "streetName": "Ульяновых",
-    "number": "28"
+    "number": "28",
+    "nearestJointId": "j13"
   },
   {
     "id": "house23",
@@ -204,7 +226,8 @@
     "width": 235,
     "height": 32,
     "streetName": "Ульяновых",
-    "number": "27"
+    "number": "27",
+    "nearestJointId": "j12"
   },
   {
     "id": "house24",
@@ -213,7 +236,8 @@
     "width": 26,
     "height": 83,
     "streetName": "Свободы",
-    "number": "2"
+    "number": "2",
+    "nearestJointId": "j20"
   },
   {
     "id": "house25",
@@ -222,7 +246,8 @@
     "width": 36,
     "height": 188,
     "streetName": "Свободы",
-    "number": "1"
+    "number": "1",
+    "nearestJointId": "j21"
   },
   {
     "id": "house26",
@@ -231,7 +256,8 @@
     "width": 28,
     "height": 158,
     "streetName": "Шумавцова",
-    "number": "2"
+    "number": "2",
+    "nearestJointId": "j28"
   },
   {
     "id": "house27",
@@ -240,7 +266,8 @@
     "width": 28,
     "height": 83,
     "streetName": "Шумавцова",
-    "number": "1"
+    "number": "1",
+    "nearestJointId": "j27"
   },
   {
     "id": "house28",
@@ -249,7 +276,8 @@
     "width": 31,
     "height": 105,
     "streetName": "Шумавцова",
-    "number": "3"
+    "number": "3",
+    "nearestJointId": "j59"
   },
   {
     "id": "house29",
@@ -258,7 +286,8 @@
     "width": 31,
     "height": 137,
     "streetName": "Комарова",
-    "number": "14"
+    "number": "14",
+    "nearestJointId": "j55"
   },
   {
     "id": "house30",
@@ -267,7 +296,8 @@
     "width": 31,
     "height": 117,
     "streetName": "Комарова",
-    "number": "15"
+    "number": "15",
+    "nearestJointId": "j54"
   },
   {
     "id": "house31",
@@ -276,7 +306,8 @@
     "width": 28,
     "height": 97,
     "streetName": "Комарова",
-    "number": "16"
+    "number": "16",
+    "nearestJointId": "j67"
   },
   {
     "id": "house32",
@@ -285,7 +316,8 @@
     "width": 28,
     "height": 144,
     "streetName": "Комарова",
-    "number": "17"
+    "number": "17",
+    "nearestJointId": "j65"
   },
   {
     "id": "house33",
@@ -294,7 +326,8 @@
     "width": 194,
     "height": 36,
     "streetName": "Нежинская",
-    "number": "2"
+    "number": "2",
+    "nearestJointId": "j46"
   },
   {
     "id": "house34",
@@ -303,7 +336,8 @@
     "width": 163,
     "height": 28,
     "streetName": "Нежинская",
-    "number": "4"
+    "number": "4",
+    "nearestJointId": "j50"
   },
   {
     "id": "house35",
@@ -312,7 +346,8 @@
     "width": 65,
     "height": 28,
     "streetName": "Нежинская",
-    "number": "5"
+    "number": "5",
+    "nearestJointId": "j57"
   },
   {
     "id": "house36",
@@ -321,7 +356,8 @@
     "width": 103,
     "height": 26,
     "streetName": "Нежинская",
-    "number": "6"
+    "number": "6",
+    "nearestJointId": "j56"
   },
   {
     "id": "house37",
@@ -330,7 +366,8 @@
     "width": 61,
     "height": 93,
     "streetName": "Нежинская",
-    "number": "8"
+    "number": "8",
+    "nearestJointId": "j58"
   },
   {
     "id": "house38",
@@ -339,7 +376,8 @@
     "width": 105,
     "height": 24,
     "streetName": "Нежинская",
-    "number": "10"
+    "number": "10",
+    "nearestJointId": "j26"
   },
   {
     "id": "house39",
@@ -348,7 +386,8 @@
     "width": 132,
     "height": 30,
     "streetName": "Нежинская",
-    "number": "12"
+    "number": "12",
+    "nearestJointId": "j24"
   },
   {
     "id": "house40",
@@ -357,7 +396,8 @@
     "width": 27,
     "height": 92,
     "streetName": "Гончарова",
-    "number": "1"
+    "number": "1",
+    "nearestJointId": "j68"
   },
   {
     "id": "house41",
@@ -366,7 +406,8 @@
     "width": 32,
     "height": 96,
     "streetName": "Гончарова",
-    "number": "2"
+    "number": "2",
+    "nearestJointId": "j69"
   },
   {
     "id": "house42",
@@ -375,7 +416,8 @@
     "width": 66,
     "height": 31,
     "streetName": "Первомайская",
-    "number": "1"
+    "number": "1",
+    "nearestJointId": "j72"
   },
   {
     "id": "house43",
@@ -384,7 +426,8 @@
     "width": 158,
     "height": 26,
     "streetName": "Первомайская",
-    "number": "3"
+    "number": "3",
+    "nearestJointId": "j71"
   },
   {
     "id": "house44",
@@ -393,7 +436,8 @@
     "width": 140,
     "height": 26,
     "streetName": "Первомайская",
-    "number": "5"
+    "number": "5",
+    "nearestJointId": "j63"
   },
   {
     "id": "house45",
@@ -402,7 +446,8 @@
     "width": 204,
     "height": 26,
     "streetName": "Первомайская",
-    "number": "7"
+    "number": "7",
+    "nearestJointId": "j62"
   },
   {
     "id": "house46",
@@ -411,6 +456,7 @@
     "width": 167,
     "height": 26,
     "streetName": "Нежинская",
-    "number": "7"
+    "number": "7",
+    "nearestJointId": "j25"
   }
 ]
