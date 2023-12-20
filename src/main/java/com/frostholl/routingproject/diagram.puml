@@ -1,0 +1,143 @@
+@startuml
+'https://plantuml.com/class-diagram
+skinparam classAttributeIconSize 0
+
+class House{
+    -id: String
+    -layoutX: double
+    -layoutY: double
+    -width: double
+    -height: double
+    -streetName: String
+    -number: String
+    -nearestJointId: String
+    +toString(): String
+}
+
+class Joint {
+    -id: String
+    -layoutX: double
+    -layoutY: double
+    -neighborsIds: List<String>
+    -neighbors: List<Joint>
+    {static} +getDistance(Joint, Joint): double
+    +addNeighbor(Joint)
+    +toString(): String
+}
+
+class BusStop {
+    -id: String
+    -layoutX: double
+    -layoutY: double
+    -width: double
+    -height: double
+    -name: String
+    -nearestJointId: String
+    +toString(): String
+}
+
+class BusRoute {
+    -id: String
+    -route: List<String>
+    -fullRoute: List<Joint>
+    +containsInRoute(Joint, Joint): boolean
+}
+
+interface InitEventListener {
+    +onInit(List<House>, List<Joint>, List<BusStop>, List<BusRoute>)
+}
+
+interface Initializable {
+    +initialize(URL, ResourceBundle)
+}
+
+class RoutingApplication {
+    {static} -initEventListeners: List<InitEventListener>
+    {static} +addInitEventListener(InitEventListener)
+    {static} +invokeInit(List<House>, List<Joint>, List<BusStop>, List<BusRoute>)
+    +start(Stage)
+}
+
+class RoutingController {
+    -houses: HashMap<String, House>
+    -housesList: List<House>
+    -joints: HashMap<String, Joint>
+    -busStops: HashMap<String, BusStop>
+    -busRoutes: List<BusRoute>
+    -currentStart: Joint
+    -currentEnd: Joint
+    -chooseState: ChooseState
+    +onInit(List<House>, List<Joint>, List<BusStop>, List<BusRoute>)
+    +initialize(URL, ResourceBundle)
+    #onHouseClicked(MouseEvent)
+    #onBusStopClicked(MouseEvent)
+    #onChooseStartButtonClicked()
+    #onChooseEndButtonClicked()
+    #validateStartPoint()
+    #validateEndPoint()
+    #drawPath()
+    #drawPathBus()
+    -getHouseFromText(String): House
+    -initHouses(List<House>)
+    -initJoints(List<Joint>)
+    -initBusStops(List<BusStop>)
+    -initBusRoutes(List<BusRoute>)
+}
+
+enum ChooseState {
+    NONE
+    START
+    END
+}
+
+class PathNode {
+    -joint: Joint
+    -shortestPath: List<PathNode>
+    -distance: double
+    -adjacentNodes: HashMap<PathNode, double>
+    +addAdjacent(PathNode)
+}
+
+class InfoBoxController {
+    -fxmlLoader: FXMLLoader
+    {static} +display(String)
+    +onCloseButton()
+}
+
+class PathController{
+    {static} -joints: HashMap<String, Joint>
+    {static} -lastPath: List<Line>
+    {static} -currentPathColor: Paint
+    {static} +overrideLast: boolean
+    {static} +init(HashMap<String, Joint>)
+    {static} +getDistance(List<Joint>): double
+    {static} +setCurrentPathColor(Paint)
+    {static} +drawPath(Pane, Joint, Joint)
+    {static} +drawPath(Pane, List<Joint>)
+    {static} +findShortestPath(Joint, Joint): List<Joint>
+    {static} +getShortestPath(HashMap<String, PathNode>, Joint): List<Joint>
+    {static} +findShortestPaths(Joint): HashMap<String, PathNode>
+    {static} -calculateShortestPath(PathNode)
+    {static} -getLowestDistanceNode(Set<PathNode>): PathNode
+    {static} -calculateMinimumDistance(PathNode, double, PathNode)
+}
+
+abstract class Application {
+    +start(Stage)
+    +launch(String... args)
+}
+
+BusRoute --> "*" Joint
+RoutingApplication --> "*" InitEventListener
+RoutingController ..|> Initializable
+RoutingController ..|> InitEventListener
+RoutingController --> "*" Joint
+RoutingController --> "*" House
+RoutingController --> "*" BusRoute
+RoutingController --> "*" BusStop
+RoutingController --> ChooseState
+PathNode --> "1" Joint
+PathController --> "*" Joint
+RoutingApplication --|> Application
+
+@enduml

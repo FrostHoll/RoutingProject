@@ -5,9 +5,6 @@ import com.frostholl.routingproject.models.BusRoute;
 import com.frostholl.routingproject.models.BusStop;
 import com.frostholl.routingproject.models.House;
 import com.frostholl.routingproject.models.Joint;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.reflect.TypeToken;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Cursor;
@@ -20,9 +17,6 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 
-import java.io.FileWriter;
-import java.io.IOException;
-import java.lang.reflect.Type;
 import java.net.URL;
 import java.util.*;
 
@@ -262,34 +256,18 @@ public class RoutingController implements Initializable, InitEventListener {
             fullRoute = fullRoute.subList(BusStopIndexB, BusStopIndexA + 1);
         PathController.setCurrentPathColor(new Color(0, 0, 1, 1));
         PathController.drawPath(map, fullRoute);
-        PathController.allowOverride = true;
+        PathController.overrideLast = false;
         PathController.setCurrentPathColor(new Color(1, 0, 0, 1));
         PathController.drawPath(map, pathA);
         PathController.setCurrentPathColor(new Color(1, 0, 0, 1));
         PathController.drawPath(map, pathB);
         PathController.setCurrentPathColor(new Color(0, 0, 1, 1));
-        PathController.allowOverride = false;
+        PathController.overrideLast = true;
         StringBuilder sb = new StringBuilder();
         sb.append(String.format("Расстояние до остановки: %.0fм\n", PathController.getDistance(pathA)));
         sb.append(String.format("В пути на маршруте \"%s\": %.0fм\n", optimalRoute.getId(), PathController.getDistance(fullRoute)));
         sb.append(String.format("Расстояние от остановки: %.0fм\n", PathController.getDistance(pathB)));
         busPathInfo.setText(sb.toString());
-    }
-
-    @FXML
-    protected void saveJoints() {
-        String mapDataPath = "src/main/resources/com/frostholl/routingproject/mapData/";
-        Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        Type jointsListToken = new TypeToken<Collection<Joint>>(){}.getType();
-        String json = gson.toJson(joints, jointsListToken);
-        try {
-            FileWriter fw = new FileWriter(mapDataPath + "joints.json", false);
-            fw.append(json);
-            fw.close();
-        }
-        catch (IOException e) {
-            System.out.println(e.getMessage());
-        }
     }
 
     public void onInit(List<House> houses, List<Joint> joints, List<BusStop> busStops, List<BusRoute> busRoutes) {

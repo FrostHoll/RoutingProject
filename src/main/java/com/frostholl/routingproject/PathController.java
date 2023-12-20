@@ -14,7 +14,7 @@ public class PathController {
 
     private static ArrayList<Line> lastPath;
 
-    public static boolean allowOverride = false;
+    public static boolean overrideLast = true;
 
     private static Paint currentPathColor = new Color(0d, 0d, 1d, 1d);
 
@@ -41,7 +41,7 @@ public class PathController {
     }
 
     public static void drawPath(Pane map, List<Joint> path) {
-        if (!lastPath.isEmpty() && !allowOverride) {
+        if (!lastPath.isEmpty() && overrideLast) {
             for (var line: lastPath) {
                 map.getChildren().remove(line);
             }
